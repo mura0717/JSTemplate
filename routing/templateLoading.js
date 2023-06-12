@@ -25,4 +25,4 @@ const setContent = (template,contentId) => {
     const content = document.getElementById(contentId);
     content.innerHTML = "";
     content.appendChild(clone);
-} 
+}

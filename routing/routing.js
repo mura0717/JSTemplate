@@ -1,4 +1,4 @@
-import "https://unpkg.com/navigo";
+import "./navigo.js";
 
 import {renderPage} from "./templateLoading.js";
 import {adjustForMissingHash, setActiveLink} from "./routingUtils.js";

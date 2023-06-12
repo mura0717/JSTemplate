@@ -4,13 +4,14 @@
     align-items: center;
     justify-content: center;
     background-color: lightgray;
-    height: 96px;
+    height: min-content;
     padding:0.75rem;
 }
 
 #nav-titel{
     white-space: nowrap;
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
     color: black;
 }
@@ -23,6 +24,6 @@
 
 .nav-lnk{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: black;
 }
