@@ -45,3 +45,19 @@ export const patchRequest = async (endpoint, body) => {
             };
         });
 }
+
+export const deleteRequest = async (endpoint, body) => {
+    return await fetch(`${baseURL}${endpoint}`, {
+        method: "DELETE",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }).then(handleResponse)
+        .catch((err) => {
+            console.log(err);
+            return {
+                message: err.message,
+            };
+        });
+}

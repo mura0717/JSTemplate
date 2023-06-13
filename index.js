@@ -8,3 +8,4 @@ await setupRouting()
 await renderTemplate("./components/navbar/index.html","topbar")
 
 window.onerror = e => alert(e);
+

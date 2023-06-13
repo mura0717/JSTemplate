@@ -1,7 +1,9 @@
 import "./navigo.js";
 
-import {renderPage} from "./templateLoading.js";
+import {renderPage, renderTemplate} from "./templateLoading.js";
 import {adjustForMissingHash, setActiveLink} from "./routingUtils.js";
+import { initPageTwo } from "../pages/page-two/index.js";
+
 
 export const setupRouting = async () => {
     window.addEventListener("load", async () => {
@@ -17,15 +19,19 @@ export const setupRouting = async () => {
             })
             .on({
                 "/": async () => {
-                    await renderPage("./pages/frontPage/index.html");
+                    await renderPage("./pages/home-page/index.html");
+                    //initHomePage();
                 },
-                "/testPage1" : async () => {
-                    await renderPage("./pages/testPage1/index.html")
+                "/page-one" : async () => {
+                    await renderPage("./pages/page-one/index.html")
+                    //initPageOne();
+                },
+                "/page-two" : async () => {
+                    await renderPage("./pages/page-two/index.html")
+                    initPageTwo();
                 }
             })
-            .notFound(async () => {
-                await renderPage("./pages/frontPage/index.html")
-            })
+            .notFound(() => renderTemplate("Page not found", "content"))
             .resolve();
     });
 }
