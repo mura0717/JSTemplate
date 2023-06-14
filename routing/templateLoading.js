@@ -39,7 +39,6 @@ const loadTemplate = async page => {
     return div.querySelector("template");
 }
 
-
 const setContent = (template,contentId) => {
     const clone = template.content.cloneNode(true);
     const content = document.getElementById(contentId);
